@@ -13,6 +13,12 @@
     <None Remove="Microsoft.Azure.Cosmos" />
     <None Remove="Microsoft.EntityFrameworkCore" />
     <None Remove="Microsoft.Extensions.Configuration.UserSecrets" />
+    <None Remove="Microsoft.IdentityModel" />
+    <None Remove="Microsoft.IdentityModel.Protocols.OpenIdConnect" />
+    <None Remove="Microsoft.AspNetCore" />
+    <None Remove="Microsoft.Azure.WebJobs" />
+    <None Remove="System.IdentityModel.Tokens.Jwt" />
+    <None Remove="Microsoft.IdentityModel.Tokens" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ZemogaBlogAPI.Core\ZemogaBlogAPI.Core.csproj" />
@@ -20,5 +26,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.31.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.36" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="5.5.0" />
   </ItemGroup>
 </Project>

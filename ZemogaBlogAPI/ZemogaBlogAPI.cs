@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System;
 using ZemogaBlogAPI.Infrastructure.CosmosDbData.Repository;
+using ZemogaBlogAPI.Infrastructure.Auth;
 using ZemogaBlogAPI.Core.Interfaces;
 using ZemogaBlogAPI.Core.Enums;
 using Newtonsoft.Json;
 using ZemogaBlogAPI.Core.Entities;
 using System.Net.NetworkInformation;
+using System.Security.Claims;
 
 namespace ZemogaBlogAPI
 {
@@ -32,9 +34,10 @@ namespace ZemogaBlogAPI
             }
         }
 
+        [Authorize("Task.Write")]
         [FunctionName("GetPostsByStatus")]
         public async Task<IActionResult> GetPostsByStatus(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "GetPostsByStatus")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "v1/GetPostsByStatus")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("Started GetPostsByStatus");
@@ -53,7 +56,7 @@ namespace ZemogaBlogAPI
 
         [FunctionName("GetPostById")]
         public async Task<IActionResult> GetPostById(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "GetPostById")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "v1/GetPostById")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("Started GetPostById");
@@ -72,7 +75,7 @@ namespace ZemogaBlogAPI
 
         [FunctionName("GetPostsByAuthor")]
         public async Task<IActionResult> GetPostsByAuthor(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "GetPostsByAuthor")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "v1/GetPostsByAuthor")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("Started GetPostsByAuthor");
@@ -91,7 +94,7 @@ namespace ZemogaBlogAPI
 
         [FunctionName("CreateNewPost")]
         public async Task<IActionResult> CreateNewPost(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "CreateNewPost")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "v1/CreateNewPost")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("Started create new post");
@@ -111,7 +114,7 @@ namespace ZemogaBlogAPI
 
         [FunctionName("UpdatePostStatus")]
         public async Task<IActionResult> UpdatePostStatus(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "UpdatePostStatus")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "v1/UpdatePostStatus")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("Started update post status");
