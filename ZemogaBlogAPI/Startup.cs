@@ -32,18 +32,19 @@ namespace ZemogaBlogAPI
 
             services.AddLogging();
 
-            ContainerInfo container = new ContainerInfo() { Name = "posts", PartitionKey = "entityId" };
+            ContainerInfo posts= new ContainerInfo() { Name = "posts", PartitionKey = "id" };
+            ContainerInfo comments = new ContainerInfo() { Name = "comments", PartitionKey = "id" };
 
-            List<ContainerInfo> containers = new List<ContainerInfo>() { container };
+
+            List<ContainerInfo> containers = new List<ContainerInfo>() { posts, comments };
 
             services.AddCosmosDb("https://zemoga-db.documents.azure.com:443/",
                                  Environment.GetEnvironmentVariable("PrimaryKey"),
                                  "zemoga",
                                 containers);
 
+            services.AddScoped<ICommentRepository, CommentRepository>();
             services.AddScoped<IPostRepository, PostRepository>();
-
-
         }
     }
 }

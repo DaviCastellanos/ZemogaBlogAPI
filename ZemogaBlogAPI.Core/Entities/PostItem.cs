@@ -7,7 +7,6 @@ namespace ZemogaBlogAPI.Core.Entities
     {
         public string AuthorName { get; set; }
         public string AuthorId { get; set; }
-        public DateTime DateCreated { get; set; }
         public DateTime DatePublished { get; set; }
         public Status Status { get; set; }
         public string Title { get; set; }

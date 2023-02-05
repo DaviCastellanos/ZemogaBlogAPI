@@ -17,7 +17,7 @@ namespace ZemogaBlogAPI.Infrastructure.Auth
 
         public override async Task OnExecutingAsync(FunctionExecutingContext executingContext, CancellationToken cancellationToken)
         {
-                var request = (HttpRequest)executingContext.Arguments["req"];
+            var request = (HttpRequest)executingContext.Arguments["req"];
             try
             {
                 var user = await AuthorizationHandler.ValidateRequestAsync(request, executingContext.Logger);
@@ -42,7 +42,7 @@ namespace ZemogaBlogAPI.Infrastructure.Auth
                 request.HttpContext.Response.StatusCode = 401;
                 await request.HttpContext.Response.Body.FlushAsync();
                 request.HttpContext.Response.Body.Close();
-                throw e;
+                throw new UnauthorizedException();
             }
         }
     }

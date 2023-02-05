@@ -8,7 +8,7 @@ namespace ZemogaBlogAPI.Core.Interfaces
     {
         Task<IEnumerable<T>> GetItemsAsync(string query);
 
-        Task CreateItemAsync(T item);
+        Task<string>CreateItemAsync(T item);
 
         Task <T> UpdateItemAsync(T item);
 

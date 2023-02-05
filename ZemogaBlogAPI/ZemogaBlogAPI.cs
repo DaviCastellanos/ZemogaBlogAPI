@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using ZemogaBlogAPI.Core.Entities;
 using System.Net.NetworkInformation;
 using System.Security.Claims;
+using System.Linq;
 
 namespace ZemogaBlogAPI
 {
@@ -21,11 +22,13 @@ namespace ZemogaBlogAPI
     {
         private readonly ILogger<ZemogaBlogAPI> log;
         private readonly PostRepository postRepo;
+        private readonly CommentRepository commentRepo;
 
-        public ZemogaBlogAPI(ILogger<ZemogaBlogAPI> log, IPostRepository repo)
+        public ZemogaBlogAPI(ILogger<ZemogaBlogAPI> log, IPostRepository postRepo, ICommentRepository commentRepo)
         {
             this.log = log ?? throw new ArgumentNullException(nameof(log));
-            this.postRepo = (PostRepository)repo;
+            this.postRepo = (PostRepository)postRepo;
+            this.commentRepo = (CommentRepository)commentRepo;
 
             if (postRepo == null || this.log == null)
             {
@@ -34,7 +37,62 @@ namespace ZemogaBlogAPI
             }
         }
 
-        [Authorize("Task.Write")]
+        [FunctionName("CreateNewComment")]
+        public async Task<IActionResult> CreateNewComment(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "v1/CreateNewComment")] HttpRequest req,
+            ILogger log)
+        {
+            log.LogInformation("Started create new comment");
+
+            try
+            {
+
+                string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+                CommentItem item = JsonConvert.DeserializeObject<CommentItem>(requestBody);
+
+
+                if (item != null)
+                {
+                    var createdItem = await commentRepo.CreateCommentAsync(item);
+                    return new CreatedResult("comments container", createdItem);
+                }
+                else
+                    return new BadRequestResult();
+            }
+            catch (Newtonsoft.Json.JsonReaderException e)
+            {
+                log.LogError(e.Message);
+                return new BadRequestResult();
+            }
+        }
+
+        [FunctionName("GetCommentsByPostId")]
+        public async Task<IActionResult> GetCommentsByPostId(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "v1/GetCommentsByPostId")] HttpRequest req,
+            ILogger log)
+        {
+            log.LogInformation("Started GetCommentsByPostId");
+
+            string id = req.Query["postId"];
+            bool includeReviews = false;
+
+            Boolean.TryParse(req.Query["includeReviews"], out includeReviews);
+
+            if (!String.IsNullOrEmpty(id))
+            {
+                var response = await commentRepo.GetCommentsByPostIdAsync(id, includeReviews);
+
+                if (!response.Any())
+                    return new NotFoundObjectResult(id);
+
+                return new OkObjectResult(response);
+            }
+            else
+                return new BadRequestResult();
+            
+        }
+
+
         [FunctionName("GetPostsByStatus")]
         public async Task<IActionResult> GetPostsByStatus(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "v1/GetPostsByStatus")] HttpRequest req,
@@ -73,6 +131,7 @@ namespace ZemogaBlogAPI
                 return new BadRequestResult();
         }
 
+        [Authorize("Task.Write")]
         [FunctionName("GetPostsByAuthor")]
         public async Task<IActionResult> GetPostsByAuthor(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "v1/GetPostsByAuthor")] HttpRequest req,
@@ -92,6 +151,7 @@ namespace ZemogaBlogAPI
                 return new BadRequestResult();
         }
 
+        [Authorize("Task.Write")]
         [FunctionName("CreateNewPost")]
         public async Task<IActionResult> CreateNewPost(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "v1/CreateNewPost")] HttpRequest req,
@@ -99,19 +159,26 @@ namespace ZemogaBlogAPI
         {
             log.LogInformation("Started create new post");
 
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            PostItem item = JsonConvert.DeserializeObject<PostItem>(requestBody);
+            try
+            { 
+                string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+                PostItem item = JsonConvert.DeserializeObject<PostItem>(requestBody);
 
-            if (item != null)
-            {
-                await postRepo.CreatePostAsync(item);
-
-                return new CreatedResult("posts container", item);
+                if (item != null)
+                {
+                    return new CreatedResult("posts container", await postRepo.CreatePostAsync(item));
+                }
+                else
+                    return new BadRequestResult();
             }
-            else
+            catch (Newtonsoft.Json.JsonReaderException e)
+            {
+                log.LogError(e.Message);
                 return new BadRequestResult();
-        }
+            }
+}
 
+        [Authorize("Task.Write")]
         [FunctionName("UpdatePostStatus")]
         public async Task<IActionResult> UpdatePostStatus(
             [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "v1/UpdatePostStatus")] HttpRequest req,

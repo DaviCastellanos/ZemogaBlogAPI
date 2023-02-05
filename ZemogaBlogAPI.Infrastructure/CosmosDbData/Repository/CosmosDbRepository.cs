@@ -13,27 +13,22 @@ namespace ZemogaBlogAPI.Infrastructure.CosmosDbData.Repository
 
         public virtual PartitionKey ResolveAuditPartitionKey(string entityId) => new PartitionKey($"{entityId.Split(':')[0]}:{entityId.Split(':')[1]}");
 
-        private readonly ICosmosDbContainerFactory _cosmosDbContainerFactory;
+        protected ICosmosDbContainerFactory _cosmosDbContainerFactory;
 
-        private readonly Microsoft.Azure.Cosmos.Container _container;
+        protected Microsoft.Azure.Cosmos.Container _container;
 
-        public CosmosDbRepository(ICosmosDbContainerFactory cosmosDbContainerFactory)
-        {
-            this._cosmosDbContainerFactory = cosmosDbContainerFactory ?? throw new ArgumentNullException(nameof(ICosmosDbContainerFactory));
-            this._container = this._cosmosDbContainerFactory.GetContainer(ContainerName)._container;
-        }
-
-        public async Task CreateItemAsync(T item)
+        public async Task<string> CreateItemAsync(T item)
         {
             item.id = GenerateId(item);
             try
             {
                 await _container.CreateItemAsync<T>(item, new PartitionKey(item.id));
+                return item.id;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-               
+                return null;
             }
         }
 

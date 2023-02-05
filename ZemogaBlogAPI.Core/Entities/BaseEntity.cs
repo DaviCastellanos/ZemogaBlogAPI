@@ -7,5 +7,6 @@ namespace ZemogaBlogAPI.Core.Entities
         [JsonProperty(PropertyName = "id")]
         public virtual string id { get; set; }
 
+        public DateTime DateCreated { get; set; }
     }
 }

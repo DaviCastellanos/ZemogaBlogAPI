@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "d61a8e93-84f3-4fc0-aada-328aa2229441",
+		"name": "ZemogaBlog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8724629"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "GetPostsByStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlIzRjdmUG9OLWJSWUswbU9HdTdlZlRpdXVUWjhDTEE3ZkRIZXRva1RGSmMiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDcvIiwiaWF0IjoxNjc1NTM0NzM0LCJuYmYiOjE2NzU1MzQ3MzQsImV4cCI6MTY3NTUzOTU4NCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhUQUFBQXIxYWxWcmlwdklpOFdGUDE0YlZHRHRHZkZCZnVYMVZld0hrc2s1MFczM3dHMy9pZjBzOUcwSEVsNDFDMERPL2ZjZlFNSVZPazRBY2s4OTUvd3g2RTNEOVB2WG1WWVM3V2FvdXpmcktKYlVrPSIsImFsdHNlY2lkIjoiMTpsaXZlLmNvbTowMDAzNDAwMTBFRjFEQTdCIiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJsaXRlLXRlc3QiLCJhcHBpZCI6ImQ5ZjFiMWFiLWNlZGYtNDljNS04ZTk1LTIwMTE0MTM4Yjk1ZiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoiZGF2aWNhc3RlQGdtYWlsLmNvbSIsImZhbWlseV9uYW1lIjoiQ2FzdGVsbGFub3MiLCJnaXZlbl9uYW1lIjoiRGF2aWQiLCJpZHAiOiJsaXZlLmNvbSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE4MS4xMzQuMTM4LjExMCIsIm5hbWUiOiJEYXZpZCBDYXN0ZWxsYW5vcyIsIm9pZCI6IjAzNjg1MjFmLWU2NDQtNGE4Mi1iZWNhLWNhNTZhMGJjZjA4ZSIsInBsYXRmIjoiNSIsInB1aWQiOiIxMDAzMjAwMDZEMDNDODVFIiwicmgiOiIwLkFVWUFPTE5hX2JUNDVFMk96UzlHb0VUYTF3TUFBQUFBQUFBQXdBQUFBQUFBQUFCR0FKRS4iLCJzY3AiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6IjRyb1p4Nk5fTmVBRWtUbDFyZmNaVDc4XzZpOGxYazNuRldaYXc3TDNSMVEiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiU0EiLCJ0aWQiOiJmZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDciLCJ1bmlxdWVfbmFtZSI6ImxpdmUuY29tI2RhdmljYXN0ZUBnbWFpbC5jb20iLCJ1dGkiOiJBVG9ZVGZMZHpFUzdLUnJ4bFZwN0FBIiwidmVyIjoiMS4wIiwid2lkcyI6WyI2MmU5MDM5NC02OWY1LTQyMzctOTE5MC0wMTIxNzcxNDVlMTAiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6InpJMlFwZUJnU0Ywckh0aTVuN2JRdWVlMV84LWo5SkRWOTNTcE44UXl0REkifSwieG1zX3RjZHQiOjE1Njg0MTE5OTV9.WBskKLh4zezTvdZMIQdSxbEu6pJZ-b_hrsT2sSIWXGBLCQMbO9Ef2RF5hqBhY7eF4vP8feoZQocUhzU9WsnmDIp79UnFpZ-xGWSr1XMYpBjrbujXn0TpHXNgVuqBspACMkpgU4Ph-M_0KfAIVzyocFVXUnFyGrUjW6qGSI_sOF8mxQM0OY2OGWtcWkWQy93PnwyAIKXSTG322-FGbg3w4ZdsJMiD1Xyjk8YFjNE7YMHt3VHz0MPdDCHgAtZfzwuK0mrMnu5Q6FkWWOMtCqRXqdNFa1URB4CrA5Lv5g7BQJGEklUM1KPX_VvHuZj2PnZJjhW49zWaUZNZ1MYssZ9iXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Roles",
+								"value": "Task.Write,Task.Edit",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:7071/api/v1/GetPostsByStatus?status=Published",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"v1",
+								"GetPostsByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "Published"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/v1/GetPostById?postId=40118b76-4b82-4620-8869-4696ef4e306b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"v1",
+								"GetPostById"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "40118b76-4b82-4620-8869-4696ef4e306b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostsByAuthor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlIzRjdmUG9OLWJSWUswbU9HdTdlZlRpdXVUWjhDTEE3ZkRIZXRva1RGSmMiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDcvIiwiaWF0IjoxNjc1NTM0NzM0LCJuYmYiOjE2NzU1MzQ3MzQsImV4cCI6MTY3NTUzOTU4NCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhUQUFBQXIxYWxWcmlwdklpOFdGUDE0YlZHRHRHZkZCZnVYMVZld0hrc2s1MFczM3dHMy9pZjBzOUcwSEVsNDFDMERPL2ZjZlFNSVZPazRBY2s4OTUvd3g2RTNEOVB2WG1WWVM3V2FvdXpmcktKYlVrPSIsImFsdHNlY2lkIjoiMTpsaXZlLmNvbTowMDAzNDAwMTBFRjFEQTdCIiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJsaXRlLXRlc3QiLCJhcHBpZCI6ImQ5ZjFiMWFiLWNlZGYtNDljNS04ZTk1LTIwMTE0MTM4Yjk1ZiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoiZGF2aWNhc3RlQGdtYWlsLmNvbSIsImZhbWlseV9uYW1lIjoiQ2FzdGVsbGFub3MiLCJnaXZlbl9uYW1lIjoiRGF2aWQiLCJpZHAiOiJsaXZlLmNvbSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE4MS4xMzQuMTM4LjExMCIsIm5hbWUiOiJEYXZpZCBDYXN0ZWxsYW5vcyIsIm9pZCI6IjAzNjg1MjFmLWU2NDQtNGE4Mi1iZWNhLWNhNTZhMGJjZjA4ZSIsInBsYXRmIjoiNSIsInB1aWQiOiIxMDAzMjAwMDZEMDNDODVFIiwicmgiOiIwLkFVWUFPTE5hX2JUNDVFMk96UzlHb0VUYTF3TUFBQUFBQUFBQXdBQUFBQUFBQUFCR0FKRS4iLCJzY3AiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6IjRyb1p4Nk5fTmVBRWtUbDFyZmNaVDc4XzZpOGxYazNuRldaYXc3TDNSMVEiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiU0EiLCJ0aWQiOiJmZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDciLCJ1bmlxdWVfbmFtZSI6ImxpdmUuY29tI2RhdmljYXN0ZUBnbWFpbC5jb20iLCJ1dGkiOiJBVG9ZVGZMZHpFUzdLUnJ4bFZwN0FBIiwidmVyIjoiMS4wIiwid2lkcyI6WyI2MmU5MDM5NC02OWY1LTQyMzctOTE5MC0wMTIxNzcxNDVlMTAiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6InpJMlFwZUJnU0Ywckh0aTVuN2JRdWVlMV84LWo5SkRWOTNTcE44UXl0REkifSwieG1zX3RjZHQiOjE1Njg0MTE5OTV9.WBskKLh4zezTvdZMIQdSxbEu6pJZ-b_hrsT2sSIWXGBLCQMbO9Ef2RF5hqBhY7eF4vP8feoZQocUhzU9WsnmDIp79UnFpZ-xGWSr1XMYpBjrbujXn0TpHXNgVuqBspACMkpgU4Ph-M_0KfAIVzyocFVXUnFyGrUjW6qGSI_sOF8mxQM0OY2OGWtcWkWQy93PnwyAIKXSTG322-FGbg3w4ZdsJMiD1Xyjk8YFjNE7YMHt3VHz0MPdDCHgAtZfzwuK0mrMnu5Q6FkWWOMtCqRXqdNFa1URB4CrA5Lv5g7BQJGEklUM1KPX_VvHuZj2PnZJjhW49zWaUZNZ1MYssZ9iXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Roles",
+								"value": "Task.Write",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:7071/api/v1/GetPostsByAuthor?authorId=000-000-003",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"v1",
+								"GetPostsByAuthor"
+							],
+							"query": [
+								{
+									"key": "authorId",
+									"value": "000-000-003"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateNewPost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlIzRjdmUG9OLWJSWUswbU9HdTdlZlRpdXVUWjhDTEE3ZkRIZXRva1RGSmMiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDcvIiwiaWF0IjoxNjc1NTM0NzM0LCJuYmYiOjE2NzU1MzQ3MzQsImV4cCI6MTY3NTUzOTU4NCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhUQUFBQXIxYWxWcmlwdklpOFdGUDE0YlZHRHRHZkZCZnVYMVZld0hrc2s1MFczM3dHMy9pZjBzOUcwSEVsNDFDMERPL2ZjZlFNSVZPazRBY2s4OTUvd3g2RTNEOVB2WG1WWVM3V2FvdXpmcktKYlVrPSIsImFsdHNlY2lkIjoiMTpsaXZlLmNvbTowMDAzNDAwMTBFRjFEQTdCIiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJsaXRlLXRlc3QiLCJhcHBpZCI6ImQ5ZjFiMWFiLWNlZGYtNDljNS04ZTk1LTIwMTE0MTM4Yjk1ZiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoiZGF2aWNhc3RlQGdtYWlsLmNvbSIsImZhbWlseV9uYW1lIjoiQ2FzdGVsbGFub3MiLCJnaXZlbl9uYW1lIjoiRGF2aWQiLCJpZHAiOiJsaXZlLmNvbSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE4MS4xMzQuMTM4LjExMCIsIm5hbWUiOiJEYXZpZCBDYXN0ZWxsYW5vcyIsIm9pZCI6IjAzNjg1MjFmLWU2NDQtNGE4Mi1iZWNhLWNhNTZhMGJjZjA4ZSIsInBsYXRmIjoiNSIsInB1aWQiOiIxMDAzMjAwMDZEMDNDODVFIiwicmgiOiIwLkFVWUFPTE5hX2JUNDVFMk96UzlHb0VUYTF3TUFBQUFBQUFBQXdBQUFBQUFBQUFCR0FKRS4iLCJzY3AiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6IjRyb1p4Nk5fTmVBRWtUbDFyZmNaVDc4XzZpOGxYazNuRldaYXc3TDNSMVEiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiU0EiLCJ0aWQiOiJmZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDciLCJ1bmlxdWVfbmFtZSI6ImxpdmUuY29tI2RhdmljYXN0ZUBnbWFpbC5jb20iLCJ1dGkiOiJBVG9ZVGZMZHpFUzdLUnJ4bFZwN0FBIiwidmVyIjoiMS4wIiwid2lkcyI6WyI2MmU5MDM5NC02OWY1LTQyMzctOTE5MC0wMTIxNzcxNDVlMTAiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6InpJMlFwZUJnU0Ywckh0aTVuN2JRdWVlMV84LWo5SkRWOTNTcE44UXl0REkifSwieG1zX3RjZHQiOjE1Njg0MTE5OTV9.WBskKLh4zezTvdZMIQdSxbEu6pJZ-b_hrsT2sSIWXGBLCQMbO9Ef2RF5hqBhY7eF4vP8feoZQocUhzU9WsnmDIp79UnFpZ-xGWSr1XMYpBjrbujXn0TpHXNgVuqBspACMkpgU4Ph-M_0KfAIVzyocFVXUnFyGrUjW6qGSI_sOF8mxQM0OY2OGWtcWkWQy93PnwyAIKXSTG322-FGbg3w4ZdsJMiD1Xyjk8YFjNE7YMHt3VHz0MPdDCHgAtZfzwuK0mrMnu5Q6FkWWOMtCqRXqdNFa1URB4CrA5Lv5g7BQJGEklUM1KPX_VvHuZj2PnZJjhW49zWaUZNZ1MYssZ9iXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Roles",
+								"value": "Task.Write",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"authorName\": \"Kristen French\",\n    \"authorId\": \"000-000-004\",\n    \"datePublished\": \"0001-01-01T00:00:00\",\n    \"status\": \"Published\",\n    \"title\": \"The Creative Sweet Spot of Dreaming\",\n    \"header\": \"George Church looks like he needs a nap. I’m talking to him on Zoom, and his eyelids have grown heavy, inclining toward slumber. Or maybe my mind is playing tricks on me. He assures me he is wide awake. But sleeping and waking life are often blurred for Church. One of the world’s most imaginative scientists, Church is a narcoleptic.\nA rare disorder, narcolepsy causes sudden attacks of sleep, and Church has fallen asleep in some unfortunate circumstances—at The World Economic Forum, just a few feet away from Microsoft founder Bill Gates, for instance. He also had to give up driving due to the risk that a bout of sleepiness will strike while he is behind the wheel. But Church, a Harvard geneticist known for his pathbreaking contributions to numerous fields—from genetics to astrobiology to biomedicine—says the benefits of his condition outweigh the inconveniences. Many of his wildest and most prescient ideas come from his narcoleptic naps.\n“The fact is, I fall asleep several times a day, and so almost everything comes from there,” Church says. His idea for a quick and simple way to “read” DNA—which resulted in the first commercial genome sequence, of the human pathogen H. pylori—came from a narcoleptic nap. He also conceived of editing genomes with a method analogous to CRISPR, and building new genomes with off-the-shelf molecules, during narcoleptic naps. More recently, in December, a wild idea for a space probe that could reach distant stars within just 20 years, at one-fifth the speed of light, came to him after a narcoleptic nap. He proposed that these lightning-speed interstellar missions could be launched by microbes and powered by laser sails. The ideas that come to him are often the result of collisions of unexpected images in his head. “I try to turn science fiction into science fact,” Church tells me.\nThe relationship between sleep, dreaming, and creativity has been the subject of conjecture for hundreds of years. Reports of creative inspiration and discoveries made by artists, inventors, and scientists while dreaming suggest these states of mind are intimately bound together. The symbolist poet Saint-Pol-Roux was known to guard his sleep at night with a sign on his bedroom door that read “Do not disturb: Poet at work.” Russian scientist Dimitri Mendeleev reportedly had a vision of the periodic table in a dream after three days of exhaustive effort (though it may have just been the perfection of an idea he had while awake). Stephen King claims he dreamt up his novel Misery during a somnolent transatlantic flight.\nRather than leave such inspirations to chance, American inventor Thomas Edison designed a strategy for mining his dreams for material.1 He would doze off with a steel ball in each hand. Once his body went limp with sleep, the balls would drop to the floor with a clatter and wake him up. He could then recall details of his dreams and record any insights. This approach was later adopted by many other creative giants, including inventor Nikola Tesla, surrealist painter Salvador Dalí, and Romantic writer and poet Edgar Allan Poe.\",\n    \"version\": 1,\n}"
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/v1/CreateNewPost",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"v1",
+								"CreateNewPost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePostStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlIzRjdmUG9OLWJSWUswbU9HdTdlZlRpdXVUWjhDTEE3ZkRIZXRva1RGSmMiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDcvIiwiaWF0IjoxNjc1NTM0NzM0LCJuYmYiOjE2NzU1MzQ3MzQsImV4cCI6MTY3NTUzOTU4NCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhUQUFBQXIxYWxWcmlwdklpOFdGUDE0YlZHRHRHZkZCZnVYMVZld0hrc2s1MFczM3dHMy9pZjBzOUcwSEVsNDFDMERPL2ZjZlFNSVZPazRBY2s4OTUvd3g2RTNEOVB2WG1WWVM3V2FvdXpmcktKYlVrPSIsImFsdHNlY2lkIjoiMTpsaXZlLmNvbTowMDAzNDAwMTBFRjFEQTdCIiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJsaXRlLXRlc3QiLCJhcHBpZCI6ImQ5ZjFiMWFiLWNlZGYtNDljNS04ZTk1LTIwMTE0MTM4Yjk1ZiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoiZGF2aWNhc3RlQGdtYWlsLmNvbSIsImZhbWlseV9uYW1lIjoiQ2FzdGVsbGFub3MiLCJnaXZlbl9uYW1lIjoiRGF2aWQiLCJpZHAiOiJsaXZlLmNvbSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE4MS4xMzQuMTM4LjExMCIsIm5hbWUiOiJEYXZpZCBDYXN0ZWxsYW5vcyIsIm9pZCI6IjAzNjg1MjFmLWU2NDQtNGE4Mi1iZWNhLWNhNTZhMGJjZjA4ZSIsInBsYXRmIjoiNSIsInB1aWQiOiIxMDAzMjAwMDZEMDNDODVFIiwicmgiOiIwLkFVWUFPTE5hX2JUNDVFMk96UzlHb0VUYTF3TUFBQUFBQUFBQXdBQUFBQUFBQUFCR0FKRS4iLCJzY3AiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6IjRyb1p4Nk5fTmVBRWtUbDFyZmNaVDc4XzZpOGxYazNuRldaYXc3TDNSMVEiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiU0EiLCJ0aWQiOiJmZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDciLCJ1bmlxdWVfbmFtZSI6ImxpdmUuY29tI2RhdmljYXN0ZUBnbWFpbC5jb20iLCJ1dGkiOiJBVG9ZVGZMZHpFUzdLUnJ4bFZwN0FBIiwidmVyIjoiMS4wIiwid2lkcyI6WyI2MmU5MDM5NC02OWY1LTQyMzctOTE5MC0wMTIxNzcxNDVlMTAiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6InpJMlFwZUJnU0Ywckh0aTVuN2JRdWVlMV84LWo5SkRWOTNTcE44UXl0REkifSwieG1zX3RjZHQiOjE1Njg0MTE5OTV9.WBskKLh4zezTvdZMIQdSxbEu6pJZ-b_hrsT2sSIWXGBLCQMbO9Ef2RF5hqBhY7eF4vP8feoZQocUhzU9WsnmDIp79UnFpZ-xGWSr1XMYpBjrbujXn0TpHXNgVuqBspACMkpgU4Ph-M_0KfAIVzyocFVXUnFyGrUjW6qGSI_sOF8mxQM0OY2OGWtcWkWQy93PnwyAIKXSTG322-FGbg3w4ZdsJMiD1Xyjk8YFjNE7YMHt3VHz0MPdDCHgAtZfzwuK0mrMnu5Q6FkWWOMtCqRXqdNFa1URB4CrA5Lv5g7BQJGEklUM1KPX_VvHuZj2PnZJjhW49zWaUZNZ1MYssZ9iXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Roles",
+								"value": "Task.Write",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:7071/api/v1/UpdatePostStatus?postId=fc5da157-4e0a-4def-be48-27faa753ebc8&Status=Published",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"v1",
+								"UpdatePostStatus"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "fc5da157-4e0a-4def-be48-27faa753ebc8"
+								},
+								{
+									"key": "Status",
+									"value": "Published"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "CreateNewComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlIzRjdmUG9OLWJSWUswbU9HdTdlZlRpdXVUWjhDTEE3ZkRIZXRva1RGSmMiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDcvIiwiaWF0IjoxNjc1NTM0NzM0LCJuYmYiOjE2NzU1MzQ3MzQsImV4cCI6MTY3NTUzOTU4NCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhUQUFBQXIxYWxWcmlwdklpOFdGUDE0YlZHRHRHZkZCZnVYMVZld0hrc2s1MFczM3dHMy9pZjBzOUcwSEVsNDFDMERPL2ZjZlFNSVZPazRBY2s4OTUvd3g2RTNEOVB2WG1WWVM3V2FvdXpmcktKYlVrPSIsImFsdHNlY2lkIjoiMTpsaXZlLmNvbTowMDAzNDAwMTBFRjFEQTdCIiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJsaXRlLXRlc3QiLCJhcHBpZCI6ImQ5ZjFiMWFiLWNlZGYtNDljNS04ZTk1LTIwMTE0MTM4Yjk1ZiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoiZGF2aWNhc3RlQGdtYWlsLmNvbSIsImZhbWlseV9uYW1lIjoiQ2FzdGVsbGFub3MiLCJnaXZlbl9uYW1lIjoiRGF2aWQiLCJpZHAiOiJsaXZlLmNvbSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE4MS4xMzQuMTM4LjExMCIsIm5hbWUiOiJEYXZpZCBDYXN0ZWxsYW5vcyIsIm9pZCI6IjAzNjg1MjFmLWU2NDQtNGE4Mi1iZWNhLWNhNTZhMGJjZjA4ZSIsInBsYXRmIjoiNSIsInB1aWQiOiIxMDAzMjAwMDZEMDNDODVFIiwicmgiOiIwLkFVWUFPTE5hX2JUNDVFMk96UzlHb0VUYTF3TUFBQUFBQUFBQXdBQUFBQUFBQUFCR0FKRS4iLCJzY3AiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6IjRyb1p4Nk5fTmVBRWtUbDFyZmNaVDc4XzZpOGxYazNuRldaYXc3TDNSMVEiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiU0EiLCJ0aWQiOiJmZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDciLCJ1bmlxdWVfbmFtZSI6ImxpdmUuY29tI2RhdmljYXN0ZUBnbWFpbC5jb20iLCJ1dGkiOiJBVG9ZVGZMZHpFUzdLUnJ4bFZwN0FBIiwidmVyIjoiMS4wIiwid2lkcyI6WyI2MmU5MDM5NC02OWY1LTQyMzctOTE5MC0wMTIxNzcxNDVlMTAiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6InpJMlFwZUJnU0Ywckh0aTVuN2JRdWVlMV84LWo5SkRWOTNTcE44UXl0REkifSwieG1zX3RjZHQiOjE1Njg0MTE5OTV9.WBskKLh4zezTvdZMIQdSxbEu6pJZ-b_hrsT2sSIWXGBLCQMbO9Ef2RF5hqBhY7eF4vP8feoZQocUhzU9WsnmDIp79UnFpZ-xGWSr1XMYpBjrbujXn0TpHXNgVuqBspACMkpgU4Ph-M_0KfAIVzyocFVXUnFyGrUjW6qGSI_sOF8mxQM0OY2OGWtcWkWQy93PnwyAIKXSTG322-FGbg3w4ZdsJMiD1Xyjk8YFjNE7YMHt3VHz0MPdDCHgAtZfzwuK0mrMnu5Q6FkWWOMtCqRXqdNFa1URB4CrA5Lv5g7BQJGEklUM1KPX_VvHuZj2PnZJjhW49zWaUZNZ1MYssZ9iXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Roles",
+								"value": "Task.Write",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"postId\": \"56d3c26b-176b-4393-a3a0-5919883c5b51\",\n\t\"PostAuthorId\": \"000-000-004\",\n    \"isReview\": true,\n\t\"body\": \"Want to write like this someday.\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/v1/CreateNewComment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"v1",
+								"CreateNewComment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCommentsByPostId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/v1/GetCommentsByPostId?postId=56d3c26b-176b-4393-a3a0-5919883c5b51&includeReviews=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"v1",
+								"GetCommentsByPostId"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "56d3c26b-176b-4393-a3a0-5919883c5b51"
+								},
+								{
+									"key": "includeReviews",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

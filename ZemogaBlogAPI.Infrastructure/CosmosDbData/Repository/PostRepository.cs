@@ -16,9 +16,11 @@ namespace ZemogaBlogAPI.Infrastructure.CosmosDbData.Repository
 
         public override string GenerateId(PostItem entity) => Guid.NewGuid().ToString();
 
-        public PostRepository(ICosmosDbContainerFactory factory) : base(factory)
-        { }
-
+        public PostRepository(ICosmosDbContainerFactory cosmosDbContainerFactory)
+        {
+            this._cosmosDbContainerFactory = cosmosDbContainerFactory ?? throw new ArgumentNullException(nameof(ICosmosDbContainerFactory));
+            this._container = this._cosmosDbContainerFactory.GetContainer(ContainerName)._container;
+        }
 
         public async Task<IEnumerable<PostItem>> GetPostsByStatusAsync(Status status)
         {
@@ -53,11 +55,13 @@ namespace ZemogaBlogAPI.Infrastructure.CosmosDbData.Repository
             return await this.UpdateItemAsync(post);
         }
 
-        public async Task CreatePostAsync(PostItem post)
+        public async Task<PostItem> CreatePostAsync(PostItem post)
         {
             post.DateCreated = DateTime.Now;
 
-            await this.CreateItemAsync(post);
+            post.id = await this.CreateItemAsync(post);
+
+            return post;
         }
     }
 }
