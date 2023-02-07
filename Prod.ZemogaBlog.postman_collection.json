@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "d61a8e93-84f3-4fc0-aada-328aa2229441",
+		"name": "ZemogaBlog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8724629"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "GetPostsByStatus",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Roles",
+								"value": "Task.Write,Task.Edit",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://zemogablogapi.azurewebsites.net/api/v1/GetPostsByStatus?status=Submitted",
+							"protocol": "https",
+							"host": [
+								"zemogablogapi",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"GetPostsByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "Submitted"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://zemogablogapi.azurewebsites.net/api/v1/GetPostById?postId=40118b76-4b82-4620-8869-4696ef4e306b",
+							"protocol": "https",
+							"host": [
+								"zemogablogapi",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"GetPostById"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "40118b76-4b82-4620-8869-4696ef4e306b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostsByAuthor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlIzRjdmUG9OLWJSWUswbU9HdTdlZlRpdXVUWjhDTEE3ZkRIZXRva1RGSmMiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDcvIiwiaWF0IjoxNjc1NTM0NzM0LCJuYmYiOjE2NzU1MzQ3MzQsImV4cCI6MTY3NTUzOTU4NCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhUQUFBQXIxYWxWcmlwdklpOFdGUDE0YlZHRHRHZkZCZnVYMVZld0hrc2s1MFczM3dHMy9pZjBzOUcwSEVsNDFDMERPL2ZjZlFNSVZPazRBY2s4OTUvd3g2RTNEOVB2WG1WWVM3V2FvdXpmcktKYlVrPSIsImFsdHNlY2lkIjoiMTpsaXZlLmNvbTowMDAzNDAwMTBFRjFEQTdCIiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJsaXRlLXRlc3QiLCJhcHBpZCI6ImQ5ZjFiMWFiLWNlZGYtNDljNS04ZTk1LTIwMTE0MTM4Yjk1ZiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoiZGF2aWNhc3RlQGdtYWlsLmNvbSIsImZhbWlseV9uYW1lIjoiQ2FzdGVsbGFub3MiLCJnaXZlbl9uYW1lIjoiRGF2aWQiLCJpZHAiOiJsaXZlLmNvbSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE4MS4xMzQuMTM4LjExMCIsIm5hbWUiOiJEYXZpZCBDYXN0ZWxsYW5vcyIsIm9pZCI6IjAzNjg1MjFmLWU2NDQtNGE4Mi1iZWNhLWNhNTZhMGJjZjA4ZSIsInBsYXRmIjoiNSIsInB1aWQiOiIxMDAzMjAwMDZEMDNDODVFIiwicmgiOiIwLkFVWUFPTE5hX2JUNDVFMk96UzlHb0VUYTF3TUFBQUFBQUFBQXdBQUFBQUFBQUFCR0FKRS4iLCJzY3AiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6IjRyb1p4Nk5fTmVBRWtUbDFyZmNaVDc4XzZpOGxYazNuRldaYXc3TDNSMVEiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiU0EiLCJ0aWQiOiJmZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDciLCJ1bmlxdWVfbmFtZSI6ImxpdmUuY29tI2RhdmljYXN0ZUBnbWFpbC5jb20iLCJ1dGkiOiJBVG9ZVGZMZHpFUzdLUnJ4bFZwN0FBIiwidmVyIjoiMS4wIiwid2lkcyI6WyI2MmU5MDM5NC02OWY1LTQyMzctOTE5MC0wMTIxNzcxNDVlMTAiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6InpJMlFwZUJnU0Ywckh0aTVuN2JRdWVlMV84LWo5SkRWOTNTcE44UXl0REkifSwieG1zX3RjZHQiOjE1Njg0MTE5OTV9.WBskKLh4zezTvdZMIQdSxbEu6pJZ-b_hrsT2sSIWXGBLCQMbO9Ef2RF5hqBhY7eF4vP8feoZQocUhzU9WsnmDIp79UnFpZ-xGWSr1XMYpBjrbujXn0TpHXNgVuqBspACMkpgU4Ph-M_0KfAIVzyocFVXUnFyGrUjW6qGSI_sOF8mxQM0OY2OGWtcWkWQy93PnwyAIKXSTG322-FGbg3w4ZdsJMiD1Xyjk8YFjNE7YMHt3VHz0MPdDCHgAtZfzwuK0mrMnu5Q6FkWWOMtCqRXqdNFa1URB4CrA5Lv5g7BQJGEklUM1KPX_VvHuZj2PnZJjhW49zWaUZNZ1MYssZ9iXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Roles",
+								"value": "Task.Write",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://zemogablogapi.azurewebsites.net/api/v1/GetPostsByAuthor?authorId=000-000-003",
+							"protocol": "https",
+							"host": [
+								"zemogablogapi",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"GetPostsByAuthor"
+							],
+							"query": [
+								{
+									"key": "authorId",
+									"value": "000-000-003"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateNewPost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlIzRjdmUG9OLWJSWUswbU9HdTdlZlRpdXVUWjhDTEE3ZkRIZXRva1RGSmMiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDcvIiwiaWF0IjoxNjc1NTM0NzM0LCJuYmYiOjE2NzU1MzQ3MzQsImV4cCI6MTY3NTUzOTU4NCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhUQUFBQXIxYWxWcmlwdklpOFdGUDE0YlZHRHRHZkZCZnVYMVZld0hrc2s1MFczM3dHMy9pZjBzOUcwSEVsNDFDMERPL2ZjZlFNSVZPazRBY2s4OTUvd3g2RTNEOVB2WG1WWVM3V2FvdXpmcktKYlVrPSIsImFsdHNlY2lkIjoiMTpsaXZlLmNvbTowMDAzNDAwMTBFRjFEQTdCIiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJsaXRlLXRlc3QiLCJhcHBpZCI6ImQ5ZjFiMWFiLWNlZGYtNDljNS04ZTk1LTIwMTE0MTM4Yjk1ZiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoiZGF2aWNhc3RlQGdtYWlsLmNvbSIsImZhbWlseV9uYW1lIjoiQ2FzdGVsbGFub3MiLCJnaXZlbl9uYW1lIjoiRGF2aWQiLCJpZHAiOiJsaXZlLmNvbSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE4MS4xMzQuMTM4LjExMCIsIm5hbWUiOiJEYXZpZCBDYXN0ZWxsYW5vcyIsIm9pZCI6IjAzNjg1MjFmLWU2NDQtNGE4Mi1iZWNhLWNhNTZhMGJjZjA4ZSIsInBsYXRmIjoiNSIsInB1aWQiOiIxMDAzMjAwMDZEMDNDODVFIiwicmgiOiIwLkFVWUFPTE5hX2JUNDVFMk96UzlHb0VUYTF3TUFBQUFBQUFBQXdBQUFBQUFBQUFCR0FKRS4iLCJzY3AiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6IjRyb1p4Nk5fTmVBRWtUbDFyZmNaVDc4XzZpOGxYazNuRldaYXc3TDNSMVEiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiU0EiLCJ0aWQiOiJmZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDciLCJ1bmlxdWVfbmFtZSI6ImxpdmUuY29tI2RhdmljYXN0ZUBnbWFpbC5jb20iLCJ1dGkiOiJBVG9ZVGZMZHpFUzdLUnJ4bFZwN0FBIiwidmVyIjoiMS4wIiwid2lkcyI6WyI2MmU5MDM5NC02OWY1LTQyMzctOTE5MC0wMTIxNzcxNDVlMTAiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6InpJMlFwZUJnU0Ywckh0aTVuN2JRdWVlMV84LWo5SkRWOTNTcE44UXl0REkifSwieG1zX3RjZHQiOjE1Njg0MTE5OTV9.WBskKLh4zezTvdZMIQdSxbEu6pJZ-b_hrsT2sSIWXGBLCQMbO9Ef2RF5hqBhY7eF4vP8feoZQocUhzU9WsnmDIp79UnFpZ-xGWSr1XMYpBjrbujXn0TpHXNgVuqBspACMkpgU4Ph-M_0KfAIVzyocFVXUnFyGrUjW6qGSI_sOF8mxQM0OY2OGWtcWkWQy93PnwyAIKXSTG322-FGbg3w4ZdsJMiD1Xyjk8YFjNE7YMHt3VHz0MPdDCHgAtZfzwuK0mrMnu5Q6FkWWOMtCqRXqdNFa1URB4CrA5Lv5g7BQJGEklUM1KPX_VvHuZj2PnZJjhW49zWaUZNZ1MYssZ9iXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Roles",
+								"value": "Task.Write",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"authorName\": \"Juli Berwald\",\n    \"authorId\": \"000-000-005\",\n    \"datePublished\": \"0001-01-01T00:00:00\",\n    \"status\": \"WIP\",\n    \"title\": \"The Algae That Might Save Earth’s Coral Reefs\",\n    \"header\": \"A relationship story.\",\n    \"body\": \"In 1879, the German botanist Anton de Bary coined the term symbiosis. People usually think of symbiosis in terms of mutually beneficial relationships, but scientifically it’s a catch-all for any relationship—harmonious or antagonistic, parasitic or neighborly—between two different organisms. The details are left unclear.\nJust two years later, while studying marine creatures under a microscope, de Bary’s compatriot Karl Andreas Heinrich Brandt realized that the small amber orbs lining their digestive tissues were not part of them, but a type of symbiotic algae. Brandt gave the cells the name zooxanthellae, which roughly means “little yellow cell in an animal.\nRowan realized that DNA had the power to reveal what microscopes could not.\nAmong the creatures in whom zooxanthellae live are coral, and in the ensuing century scientists discovered that those little yellow cells donate a whopping 90 percent of the sugar they make from photosynthesis to their coral hosts. That energy is why coral colonies—which themselves are aggregations of pencil-eraser-sized polyps—can build reefs so immense they can be seen from outer space.\nThe break-up of the symbiosis, known as bleaching, which occurs when seawater warms, is the reason coral reefs are the first ecosystem-scale casualties of climate change. Half the world’s coral reefs have died, largely from bleaching, and by some predictions that number will rise to 99 percent by mid-century. Yet the nature of the relationship between coral and algae remains in many ways a mystery.\",\n    \"version\": 1,\n}"
+						},
+						"url": {
+							"raw": "https://zemogablogapi.azurewebsites.net/api/v1/CreateNewPost",
+							"protocol": "https",
+							"host": [
+								"zemogablogapi",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"CreateNewPost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePostStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlIzRjdmUG9OLWJSWUswbU9HdTdlZlRpdXVUWjhDTEE3ZkRIZXRva1RGSmMiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDcvIiwiaWF0IjoxNjc1NTM0NzM0LCJuYmYiOjE2NzU1MzQ3MzQsImV4cCI6MTY3NTUzOTU4NCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhUQUFBQXIxYWxWcmlwdklpOFdGUDE0YlZHRHRHZkZCZnVYMVZld0hrc2s1MFczM3dHMy9pZjBzOUcwSEVsNDFDMERPL2ZjZlFNSVZPazRBY2s4OTUvd3g2RTNEOVB2WG1WWVM3V2FvdXpmcktKYlVrPSIsImFsdHNlY2lkIjoiMTpsaXZlLmNvbTowMDAzNDAwMTBFRjFEQTdCIiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJsaXRlLXRlc3QiLCJhcHBpZCI6ImQ5ZjFiMWFiLWNlZGYtNDljNS04ZTk1LTIwMTE0MTM4Yjk1ZiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoiZGF2aWNhc3RlQGdtYWlsLmNvbSIsImZhbWlseV9uYW1lIjoiQ2FzdGVsbGFub3MiLCJnaXZlbl9uYW1lIjoiRGF2aWQiLCJpZHAiOiJsaXZlLmNvbSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE4MS4xMzQuMTM4LjExMCIsIm5hbWUiOiJEYXZpZCBDYXN0ZWxsYW5vcyIsIm9pZCI6IjAzNjg1MjFmLWU2NDQtNGE4Mi1iZWNhLWNhNTZhMGJjZjA4ZSIsInBsYXRmIjoiNSIsInB1aWQiOiIxMDAzMjAwMDZEMDNDODVFIiwicmgiOiIwLkFVWUFPTE5hX2JUNDVFMk96UzlHb0VUYTF3TUFBQUFBQUFBQXdBQUFBQUFBQUFCR0FKRS4iLCJzY3AiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6IjRyb1p4Nk5fTmVBRWtUbDFyZmNaVDc4XzZpOGxYazNuRldaYXc3TDNSMVEiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiU0EiLCJ0aWQiOiJmZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDciLCJ1bmlxdWVfbmFtZSI6ImxpdmUuY29tI2RhdmljYXN0ZUBnbWFpbC5jb20iLCJ1dGkiOiJBVG9ZVGZMZHpFUzdLUnJ4bFZwN0FBIiwidmVyIjoiMS4wIiwid2lkcyI6WyI2MmU5MDM5NC02OWY1LTQyMzctOTE5MC0wMTIxNzcxNDVlMTAiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6InpJMlFwZUJnU0Ywckh0aTVuN2JRdWVlMV84LWo5SkRWOTNTcE44UXl0REkifSwieG1zX3RjZHQiOjE1Njg0MTE5OTV9.WBskKLh4zezTvdZMIQdSxbEu6pJZ-b_hrsT2sSIWXGBLCQMbO9Ef2RF5hqBhY7eF4vP8feoZQocUhzU9WsnmDIp79UnFpZ-xGWSr1XMYpBjrbujXn0TpHXNgVuqBspACMkpgU4Ph-M_0KfAIVzyocFVXUnFyGrUjW6qGSI_sOF8mxQM0OY2OGWtcWkWQy93PnwyAIKXSTG322-FGbg3w4ZdsJMiD1Xyjk8YFjNE7YMHt3VHz0MPdDCHgAtZfzwuK0mrMnu5Q6FkWWOMtCqRXqdNFa1URB4CrA5Lv5g7BQJGEklUM1KPX_VvHuZj2PnZJjhW49zWaUZNZ1MYssZ9iXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Roles",
+								"value": "Task.Write",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://zemogablogapi.azurewebsites.net/api/v1/UpdatePostStatus?postId=a6d011a5-c938-4940-8998-553a18e44eae&Status=Submitted",
+							"protocol": "https",
+							"host": [
+								"zemogablogapi",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"UpdatePostStatus"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "a6d011a5-c938-4940-8998-553a18e44eae"
+								},
+								{
+									"key": "Status",
+									"value": "Submitted"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "CreateNewComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlIzRjdmUG9OLWJSWUswbU9HdTdlZlRpdXVUWjhDTEE3ZkRIZXRva1RGSmMiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDcvIiwiaWF0IjoxNjc1NTM0NzM0LCJuYmYiOjE2NzU1MzQ3MzQsImV4cCI6MTY3NTUzOTU4NCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhUQUFBQXIxYWxWcmlwdklpOFdGUDE0YlZHRHRHZkZCZnVYMVZld0hrc2s1MFczM3dHMy9pZjBzOUcwSEVsNDFDMERPL2ZjZlFNSVZPazRBY2s4OTUvd3g2RTNEOVB2WG1WWVM3V2FvdXpmcktKYlVrPSIsImFsdHNlY2lkIjoiMTpsaXZlLmNvbTowMDAzNDAwMTBFRjFEQTdCIiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJsaXRlLXRlc3QiLCJhcHBpZCI6ImQ5ZjFiMWFiLWNlZGYtNDljNS04ZTk1LTIwMTE0MTM4Yjk1ZiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoiZGF2aWNhc3RlQGdtYWlsLmNvbSIsImZhbWlseV9uYW1lIjoiQ2FzdGVsbGFub3MiLCJnaXZlbl9uYW1lIjoiRGF2aWQiLCJpZHAiOiJsaXZlLmNvbSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE4MS4xMzQuMTM4LjExMCIsIm5hbWUiOiJEYXZpZCBDYXN0ZWxsYW5vcyIsIm9pZCI6IjAzNjg1MjFmLWU2NDQtNGE4Mi1iZWNhLWNhNTZhMGJjZjA4ZSIsInBsYXRmIjoiNSIsInB1aWQiOiIxMDAzMjAwMDZEMDNDODVFIiwicmgiOiIwLkFVWUFPTE5hX2JUNDVFMk96UzlHb0VUYTF3TUFBQUFBQUFBQXdBQUFBQUFBQUFCR0FKRS4iLCJzY3AiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6IjRyb1p4Nk5fTmVBRWtUbDFyZmNaVDc4XzZpOGxYazNuRldaYXc3TDNSMVEiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiU0EiLCJ0aWQiOiJmZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDciLCJ1bmlxdWVfbmFtZSI6ImxpdmUuY29tI2RhdmljYXN0ZUBnbWFpbC5jb20iLCJ1dGkiOiJBVG9ZVGZMZHpFUzdLUnJ4bFZwN0FBIiwidmVyIjoiMS4wIiwid2lkcyI6WyI2MmU5MDM5NC02OWY1LTQyMzctOTE5MC0wMTIxNzcxNDVlMTAiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6InpJMlFwZUJnU0Ywckh0aTVuN2JRdWVlMV84LWo5SkRWOTNTcE44UXl0REkifSwieG1zX3RjZHQiOjE1Njg0MTE5OTV9.WBskKLh4zezTvdZMIQdSxbEu6pJZ-b_hrsT2sSIWXGBLCQMbO9Ef2RF5hqBhY7eF4vP8feoZQocUhzU9WsnmDIp79UnFpZ-xGWSr1XMYpBjrbujXn0TpHXNgVuqBspACMkpgU4Ph-M_0KfAIVzyocFVXUnFyGrUjW6qGSI_sOF8mxQM0OY2OGWtcWkWQy93PnwyAIKXSTG322-FGbg3w4ZdsJMiD1Xyjk8YFjNE7YMHt3VHz0MPdDCHgAtZfzwuK0mrMnu5Q6FkWWOMtCqRXqdNFa1URB4CrA5Lv5g7BQJGEklUM1KPX_VvHuZj2PnZJjhW49zWaUZNZ1MYssZ9iXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Roles",
+								"value": "Task.Write",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"postId\": \"a6d011a5-c938-4940-8998-553a18e44eae\",\n\t\"PostAuthorId\": \"000-000-005\",\n    \"isReview\": true,\n\t\"body\": \"This story needs more work.\"\n}"
+						},
+						"url": {
+							"raw": "https://zemogablogapi.azurewebsites.net/api/v1/CreateNewComment",
+							"protocol": "https",
+							"host": [
+								"zemogablogapi",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"CreateNewComment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCommentsByPostId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://zemogablogapi.azurewebsites.net/api/v1/GetCommentsByPostId?postId=a6d011a5-c938-4940-8998-553a18e44eae&includeReviews=true",
+							"protocol": "https",
+							"host": [
+								"zemogablogapi",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"GetCommentsByPostId"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "a6d011a5-c938-4940-8998-553a18e44eae"
+								},
+								{
+									"key": "includeReviews",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

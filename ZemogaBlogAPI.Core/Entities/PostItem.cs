@@ -13,7 +13,7 @@ namespace ZemogaBlogAPI.Core.Entities
         public string Header { get; set; }
         public string Body { get; set; }
         public int Version { get; set; }
-        public string PostId { get { return base.id; } }
+        public string PostId { get { return base.id; } set { } }
     }
 }
 

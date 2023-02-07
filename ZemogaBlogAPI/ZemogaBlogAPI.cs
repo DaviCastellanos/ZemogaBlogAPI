@@ -178,26 +178,57 @@ namespace ZemogaBlogAPI
             }
 }
 
-        [Authorize("Task.Write")]
-        [FunctionName("UpdatePostStatus")]
-        public async Task<IActionResult> UpdatePostStatus(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "v1/UpdatePostStatus")] HttpRequest req,
+        [Authorize("Task.Edit")]
+        [FunctionName("PublishPost")]
+        public async Task<IActionResult> PublishPost(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "v1/PublishPost")] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("Started update post status");
+            log.LogInformation("Started Publish Post");
 
             string id = req.Query["postId"];
-            Status status = 0;
 
-            if (!String.IsNullOrEmpty(id) && Enum.TryParse(req.Query["status"], out status))
+            if (!String.IsNullOrEmpty(id))
             {
                 PostItem post = await postRepo.GetPostByIdAsync(id);
 
                 if (post == null)
                     return new NotFoundResult();
 
-                post.Status = status;
+                post.Status = Status.Published;
 
+                PostItem newItem = await postRepo.UpdatePostAsync(post);
+
+                return new OkObjectResult(newItem);
+            }
+            else
+                return new BadRequestResult();
+        }
+
+        [Authorize("Task.Write")]
+        [FunctionName("UpdatePost")]
+        public async Task<IActionResult> UpdatePost(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "v1/UpdatePost")] HttpRequest req,
+            ILogger log)
+        {
+            log.LogInformation("Started update post");
+
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            PostItem item = JsonConvert.DeserializeObject<PostItem>(requestBody);
+
+            if (item != null)
+            {
+                PostItem post = await postRepo.GetPostByIdAsync(item.PostId);
+
+                if (post == null)
+                    return new NotFoundResult();
+
+                post.Status = item.Status;
+                post.Title = item.Title;
+                post.Header = item.Header;
+                post.Body = item.Body;
+                post.Version = item.Version++;
+                    
                 PostItem newItem = await postRepo.UpdatePostAsync(post);
 
                 return new OkObjectResult(newItem);
