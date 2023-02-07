@@ -196,6 +196,8 @@ namespace ZemogaBlogAPI
                     return new NotFoundResult();
 
                 post.Status = Status.Published;
+                post.DatePublished = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time"));
+
 
                 PostItem newItem = await postRepo.UpdatePostAsync(post);
 
