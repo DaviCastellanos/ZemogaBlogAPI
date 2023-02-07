@@ -142,7 +142,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"authorName\": \"Juli Berwald\",\n    \"authorId\": \"000-000-005\",\n    \"datePublished\": \"0001-01-01T00:00:00\",\n    \"status\": \"WIP\",\n    \"title\": \"The Algae That Might Save Earth’s Coral Reefs\",\n    \"header\": \"A relationship story.\",\n    \"body\": \"In 1879, the German botanist Anton de Bary coined the term symbiosis. People usually think of symbiosis in terms of mutually beneficial relationships, but scientifically it’s a catch-all for any relationship—harmonious or antagonistic, parasitic or neighborly—between two different organisms. The details are left unclear.\nJust two years later, while studying marine creatures under a microscope, de Bary’s compatriot Karl Andreas Heinrich Brandt realized that the small amber orbs lining their digestive tissues were not part of them, but a type of symbiotic algae. Brandt gave the cells the name zooxanthellae, which roughly means “little yellow cell in an animal.\nRowan realized that DNA had the power to reveal what microscopes could not.\nAmong the creatures in whom zooxanthellae live are coral, and in the ensuing century scientists discovered that those little yellow cells donate a whopping 90 percent of the sugar they make from photosynthesis to their coral hosts. That energy is why coral colonies—which themselves are aggregations of pencil-eraser-sized polyps—can build reefs so immense they can be seen from outer space.\nThe break-up of the symbiosis, known as bleaching, which occurs when seawater warms, is the reason coral reefs are the first ecosystem-scale casualties of climate change. Half the world’s coral reefs have died, largely from bleaching, and by some predictions that number will rise to 99 percent by mid-century. Yet the nature of the relationship between coral and algae remains in many ways a mystery.\",\n    \"version\": 1,\n}"
+							"raw": "{\n    \"authorName\": \"Brian Gallagher\",\n    \"authorId\": \"000-000-003\",\n    \"datePublished\": \"0001-01-01T00:00:00\",\n    \"status\": \"Published\",\n    \"title\": \"Can AI Help Us Be Better People?\",\n    \"header\": \"One question for Jon Rueda, a doctoral student in moral philosophy at the University of Granada.\",\n    \"body\": \"Yes. I have published a new article with a colleague, Bianca Rodriguez, in which we argue that, indeed, AI assistants could help us improve some aspects of our morality. Some AI models aim to make us more aware of some of the limitations of our psychology when we are trying to decide what to do, or provide relevant factual information. Some of these AIs start by knowing your values and preferences, and then try in concrete moments to offer a best course of action. These are controversial in some ways, because they are not going to improve your capacity to make your own decisions. We analyze another, more promising system called the Socratic assistant, or SocrAI, which is based mainly on the idea that through dialogue we can advance our knowledge, think about complex moral issues, and improve our moral judgements. \n\nThis AI-based voice assistant hasn’t been developed commercially. But I know there’s interest because one of the proponents of this idea, the philosopher Francisco Lara, told us that some companies reached out to him about it. This interest is going to grow. Because of the very famous ChatGPT, there is an increasing awareness about how AI is improving. We feel that we are having a real conversation with an AI system. \n\nThe AI-based Socratic assistant we discuss in our paper wouldn’t necessarily be trained on Socrates’ words as we know them from Plato’s writings—it would just try to emulate his Socratic method. It’s based on a more procedural understanding of ethics, which is the more philosophically provocative aspect of our paper. This Socrates is not going to tell you, “You should do that,” in a concrete moment, but will help you improve your reasoning—to consider empirical facts, to think more logically and coherently. So it won’t tell you what is good or wrong. Socrates never says what is the truth, the concrete truth. But through the dialogues, he tells us what the weak points of your arguments are. Through irony, he tells you that what you have said can be counter argued. And in that process you learn and improve your moral reasoning.\n\nWe are optimistic in our article, but there are also many concerns that we are not dealing with, like data protection: What will happen with the data that is being created through the interaction with the users? This data is also important and will help to improve the system.\n\nThese systems could also have some kind of problematic tendency to shape the autonomy and agency of the people. AI could influence our character, and manipulate or nudge us toward certain types of behavior. There could also be a problem of deskilling moral abilities. Imagine that we create a kind of dependence with these systems, and if these systems do not protect our autonomy—if people start deferring to the advice of AI systems when making ethical decisions—in the long term that could be negative. So it’s difficult to have a balanced appreciation of this technology.\n\nWould it be good to have children grow up with a Socratic assistant? I have the intuition that we should be more protective with children because they are still developing. They are creating their own autonomy, and it’s more sensible to try to not offer technologies that will limit or narrow it. But on the other hand, children are already exposed to other kinds of technologies that can manipulate them, that shape their preferences and perspectives. So the relationship between children and new technologies is something that is already happening. And of course, AI applications could have a role in this, and if we give children good tools to improve their moral abilities, that would be good, but also we should be more concerned about the deleterious effects.\n\nSome people argue that, because of our evolutionary history, we are more biased toward those closer to us in time and space, and that we have a lot of tendencies to be partial, and that AI could help us to be more like an ideal observer. This view in some sense is also problematic, because we know that AI systems have different kinds of biases. Some of these biases are particular to AI, but they are very common and very similar to the biases that we have in our psychology. In that sense AI could not only reproduce but also amplify human biases, so we should not be super optimistic about using AI to overcome our limitations of our moral psychology.\",\n    \"version\": 1,\n}"
 						},
 						"url": {
 							"raw": "https://zemogablogapi.azurewebsites.net/api/v1/CreateNewPost",
@@ -162,7 +162,56 @@
 					"response": []
 				},
 				{
-					"name": "UpdatePostStatus",
+					"name": "PublishPost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlIzRjdmUG9OLWJSWUswbU9HdTdlZlRpdXVUWjhDTEE3ZkRIZXRva1RGSmMiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDcvIiwiaWF0IjoxNjc1NTM0NzM0LCJuYmYiOjE2NzU1MzQ3MzQsImV4cCI6MTY3NTUzOTU4NCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhUQUFBQXIxYWxWcmlwdklpOFdGUDE0YlZHRHRHZkZCZnVYMVZld0hrc2s1MFczM3dHMy9pZjBzOUcwSEVsNDFDMERPL2ZjZlFNSVZPazRBY2s4OTUvd3g2RTNEOVB2WG1WWVM3V2FvdXpmcktKYlVrPSIsImFsdHNlY2lkIjoiMTpsaXZlLmNvbTowMDAzNDAwMTBFRjFEQTdCIiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJsaXRlLXRlc3QiLCJhcHBpZCI6ImQ5ZjFiMWFiLWNlZGYtNDljNS04ZTk1LTIwMTE0MTM4Yjk1ZiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoiZGF2aWNhc3RlQGdtYWlsLmNvbSIsImZhbWlseV9uYW1lIjoiQ2FzdGVsbGFub3MiLCJnaXZlbl9uYW1lIjoiRGF2aWQiLCJpZHAiOiJsaXZlLmNvbSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE4MS4xMzQuMTM4LjExMCIsIm5hbWUiOiJEYXZpZCBDYXN0ZWxsYW5vcyIsIm9pZCI6IjAzNjg1MjFmLWU2NDQtNGE4Mi1iZWNhLWNhNTZhMGJjZjA4ZSIsInBsYXRmIjoiNSIsInB1aWQiOiIxMDAzMjAwMDZEMDNDODVFIiwicmgiOiIwLkFVWUFPTE5hX2JUNDVFMk96UzlHb0VUYTF3TUFBQUFBQUFBQXdBQUFBQUFBQUFCR0FKRS4iLCJzY3AiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6IjRyb1p4Nk5fTmVBRWtUbDFyZmNaVDc4XzZpOGxYazNuRldaYXc3TDNSMVEiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiU0EiLCJ0aWQiOiJmZDVhYjMzOC1mOGI0LTRkZTQtOGVjZC0yZjQ2YTA0NGRhZDciLCJ1bmlxdWVfbmFtZSI6ImxpdmUuY29tI2RhdmljYXN0ZUBnbWFpbC5jb20iLCJ1dGkiOiJBVG9ZVGZMZHpFUzdLUnJ4bFZwN0FBIiwidmVyIjoiMS4wIiwid2lkcyI6WyI2MmU5MDM5NC02OWY1LTQyMzctOTE5MC0wMTIxNzcxNDVlMTAiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6InpJMlFwZUJnU0Ywckh0aTVuN2JRdWVlMV84LWo5SkRWOTNTcE44UXl0REkifSwieG1zX3RjZHQiOjE1Njg0MTE5OTV9.WBskKLh4zezTvdZMIQdSxbEu6pJZ-b_hrsT2sSIWXGBLCQMbO9Ef2RF5hqBhY7eF4vP8feoZQocUhzU9WsnmDIp79UnFpZ-xGWSr1XMYpBjrbujXn0TpHXNgVuqBspACMkpgU4Ph-M_0KfAIVzyocFVXUnFyGrUjW6qGSI_sOF8mxQM0OY2OGWtcWkWQy93PnwyAIKXSTG322-FGbg3w4ZdsJMiD1Xyjk8YFjNE7YMHt3VHz0MPdDCHgAtZfzwuK0mrMnu5Q6FkWWOMtCqRXqdNFa1URB4CrA5Lv5g7BQJGEklUM1KPX_VvHuZj2PnZJjhW49zWaUZNZ1MYssZ9iXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Roles",
+								"value": "Task.Edit",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://zemogablogapi.azurewebsites.net/api/v1/PublishPost?postId=03b2e733-e1a0-44da-beb1-7cd5ce3d1097",
+							"protocol": "https",
+							"host": [
+								"zemogablogapi",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"v1",
+								"PublishPost"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "03b2e733-e1a0-44da-beb1-7cd5ce3d1097"
+								},
+								{
+									"key": "Status",
+									"value": "Published",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePost",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -183,27 +232,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://zemogablogapi.azurewebsites.net/api/v1/UpdatePostStatus?postId=a6d011a5-c938-4940-8998-553a18e44eae&Status=Submitted",
-							"protocol": "https",
+							"raw": "http://localhost:7071/api/v1/UpdatePost",
+							"protocol": "http",
 							"host": [
-								"zemogablogapi",
-								"azurewebsites",
-								"net"
+								"localhost"
 							],
+							"port": "7071",
 							"path": [
 								"api",
 								"v1",
-								"UpdatePostStatus"
-							],
-							"query": [
-								{
-									"key": "postId",
-									"value": "a6d011a5-c938-4940-8998-553a18e44eae"
-								},
-								{
-									"key": "Status",
-									"value": "Submitted"
-								}
+								"UpdatePost"
 							]
 						}
 					},
